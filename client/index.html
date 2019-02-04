@@ -1,17 +1,28 @@
-<!-- index.html -->
+<!--DOCTYPE html-->
 <html>
 <head>
 	<!-- loading resources -->
+	<meta charset="utf-8" />
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-	<title>
-		My Project
-	</title>
+	<title>My Project</title>
+	<style>
+		* { padding: 0; margin: 0; }
+		canvas { background: #eee; display: block; margin: 0 auto; }
+	</style>
 </head>
 <body>
+	<br>
+	<canvas id="myCanvas" width="480" height="320"></canvas>
 	<script type="text/javascript">
-		var ctx = document.getElementById("ctx").getContext("2d");
-    	ctx.font = '30px Arial';
+		var canvas = document.getElementById("myCanvas")
+		var ctx = canvas.getContext("2d");
     	var socket = io();
+
+    	ctx.beginPath();
+    	ctx.rect(20, 40, 50, 50);
+    	ctx.fillStyle = '#FF0000';
+    	ctx.fill();
+    	ctx.closePath();
 	</script>
 </body>
 </html>
