@@ -13,7 +13,7 @@ var servport = 2000;
 serv.listen(servport);
 console.log("Server Started On Port " + servport + ".");
 
-var SOCKET_LIST = {};
+var SOCKET_LIST = {};	
  
 var io = require('socket.io')(serv,{});
 io.sockets.on('connection', function(socket){
